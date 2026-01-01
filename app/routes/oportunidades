@@ -1,0 +1,305 @@
+import type { MetaFunction } from "@remix-run/node";
+import OpportunityCard from "~/components/OpportunityCard";
+
+export const meta: MetaFunction = () => {
+    return [
+        { title: "Oportunidades de Negocio - Sonora" },
+        { name: "description", content: "Análisis de oportunidades para marketing, publicidad y ciberseguridad en Sonora" },
+    ];
+};
+
+export default function OportunidadesPage() {
+    const oportunidades = [
+        {
+            id: 1,
+            sector: "Pesquero y Acuícola",
+            empresas: 582,
+            oportunidades: [
+                "Marketing digital para exportación",
+                "Branding de productos del mar",
+                "Seguridad en transacciones digitales",
+                "Respaldo de datos de producción"
+            ],
+            prioridad: "Alta",
+            color: "border-blue-500",
+            icon: "🐟"
+        },
+        {
+            id: 2,
+            sector: "Construcción",
+            empresas: 242,
+            oportunidades: [
+                "Publicidad en redes para proyectos",
+                "Marketing B2B para proveedores",
+                "Seguridad de datos de planos",
+                "Respaldo en la nube"
+            ],
+            prioridad: "Alta",
+            color: "border-green-500",
+            icon: "🏗️"
+        },
+        {
+            id: 3,
+            sector: "Alimenticio",
+            empresas: 216,
+            oportunidades: [
+                "Marketing de alimentos regionales",
+                "Publicidad para panaderías/tortillerías",
+                "Protección de recetas secretas",
+                "Seguridad en pedidos en línea"
+            ],
+            prioridad: "Media",
+            color: "border-yellow-500",
+            icon: "🍞"
+        },
+        {
+            id: 4,
+            sector: "Manufactura",
+            empresas: 117,
+            oportunidades: [
+                "Publicidad industrial B2B",
+                "Marketing de productos de madera/concreto",
+                "Ciberseguridad para planos digitales",
+                "Respaldo de datos de producción"
+            ],
+            prioridad: "Media",
+            color: "border-orange-500",
+            icon: "🏭"
+        },
+        {
+            id: 5,
+            sector: "Servicios Básicos",
+            empresas: 73,
+            oportunidades: [
+                "Comunicación corporativa (CFE/OOMAPAS)",
+                "Publicidad de servicios",
+                "Seguridad de datos de usuarios",
+                "Respaldo de información crítica"
+            ],
+            prioridad: "Baja",
+            color: "border-purple-500",
+            icon: "⚡"
+        },
+        {
+            id: 6,
+            sector: "Minería",
+            empresas: 64,
+            oportunidades: [
+                "Marketing para proveedores mineros",
+                "Publicidad de servicios especializados",
+                "Alta seguridad para datos geológicos",
+                "Respaldo en ubicaciones remotas"
+            ],
+            prioridad: "Media",
+            color: "border-gray-500",
+            icon: "⛏️"
+        }
+    ];
+
+    const recomendaciones = [
+        {
+            area: "Marketing Digital",
+            recomendacion: "Enfoque en empresas sin presencia web (540 empresas)",
+            accion: "Desarrollar paquetes básicos de presencia digital"
+        },
+        {
+            area: "Publicidad Tradicional",
+            recomendacion: "Campañas localizadas por municipio",
+            accion: "Crear guías de medios locales por región"
+        },
+        {
+            area: "Ciberseguridad",
+            recomendacion: "Segmentar por nivel de exposición digital",
+            accion: "Ofrecer auditorías gratuitas a empresas con correo"
+        },
+        {
+            area: "Respaldo de Datos",
+            recomendacion: "Enfoque en sectores con datos críticos",
+            accion: "Paquetes especializados por sector económico"
+        }
+    ];
+
+    return (
+        <div className="space-y-8">
+            <div className="text-center mb-8">
+                <h1 className="text-4xl font-bold text-gray-800">Oportunidades de Negocio</h1>
+                <p className="text-xl text-gray-600 mt-2">
+                    Análisis estratégico por sector para marketing, publicidad y ciberseguridad
+                </p>
+            </div>
+
+            {/* Estadísticas de Oportunidad */}
+            <div className="stats shadow w-full">
+                <div className="stat">
+                    <div className="stat-figure text-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div className="stat-title">Total Oportunidades</div>
+                    <div className="stat-value text-primary">1,335</div>
+                    <div className="stat-desc">Empresas potenciales</div>
+                </div>
+
+                <div className="stat">
+                    <div className="stat-figure text-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                    <div className="stat-title">Sectores Clave</div>
+                    <div className="stat-value text-secondary">6</div>
+                    <div className="stat-desc">Con alta prioridad</div>
+                </div>
+
+                <div className="stat">
+                    <div className="stat-figure text-primary">
+                        <div className="avatar">
+                            <div className="w-16 rounded-full">
+                                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="Avatar" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="stat-value">86%</div>
+                    <div className="stat-title">Cobertura del mercado</div>
+                    <div className="stat-desc text-primary">31 proyectos completados</div>
+                </div>
+            </div>
+
+            {/* Oportunidades por Sector */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {oportunidades.map((oportunidad) => (
+                    <div key={oportunidad.id} className={`card bg-base-100 shadow-xl border-t-4 ${oportunidad.color}`}>
+                        <div className="card-body">
+                            <div className="flex items-center justify-between mb-4">
+                                <h2 className="card-title text-2xl">
+                                    {oportunidad.icon} {oportunidad.sector}
+                                </h2>
+                                <div className={`badge ${oportunidad.prioridad === 'Alta' ? 'badge-error' : oportunidad.prioridad === 'Media' ? 'badge-warning' : 'badge-success'}`}>
+                                    {oportunidad.prioridad}
+                                </div>
+                            </div>
+
+                            <div className="text-center mb-4">
+                                <span className="text-4xl font-bold text-gray-800">
+                                    {oportunidad.empresas}
+                                </span>
+                                <p className="text-gray-600">empresas</p>
+                            </div>
+
+                            <div className="divider">Oportunidades</div>
+
+                            <ul className="space-y-2">
+                                {oportunidad.oportunidades.map((op, index) => (
+                                    <li key={index} className="flex items-start">
+                                        <svg className="w-4 h-4 text-green-500 mt-1 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                        </svg>
+                                        <span>{op}</span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <div className="card-actions justify-end mt-4">
+                                <button className="btn btn-primary btn-sm">Ver Detalles</button>
+                                <button className="btn btn-outline btn-sm">Contactar</button>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* Recomendaciones Estratégicas */}
+            <div className="card bg-base-100 shadow-xl mt-8">
+                <div className="card-body">
+                    <h2 className="card-title text-2xl">📋 Plan de Acción Recomendado</h2>
+
+                    <div className="overflow-x-auto">
+                        <table className="table table-zebra">
+                            <thead>
+                                <tr>
+                                    <th>Área</th>
+                                    <th>Recomendación</th>
+                                    <th>Acción Inmediata</th>
+                                    <th>Prioridad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {recomendaciones.map((rec, index) => (
+                                    <tr key={index}>
+                                        <td>
+                                            <div className="font-bold">{rec.area}</div>
+                                        </td>
+                                        <td>{rec.recomendacion}</td>
+                                        <td>{rec.accion}</td>
+                                        <td>
+                                            <div className="badge badge-primary">Alta</div>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div className="divider"></div>
+
+                    {/* Timeline de Implementación */}
+                    <div>
+                        <h3 className="text-lg font-semibold mb-4">📅 Timeline Recomendado</h3>
+                        <ul className="timeline timeline-vertical">
+                            <li>
+                                <div className="timeline-start">Mes 1-2</div>
+                                <div className="timeline-middle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div className="timeline-end timeline-box">
+                                    <div className="font-bold">Fase de Contacto</div>
+                                    Contactar 100 empresas pesqueras y de construcción
+                                </div>
+                            </li>
+                            <li>
+                                <div className="timeline-start">Mes 3-4</div>
+                                <div className="timeline-middle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div className="timeline-end timeline-box">
+                                    <div className="font-bold">Desarrollo de Proyectos</div>
+                                    Implementar primeros 20 proyectos piloto
+                                </div>
+                            </li>
+                            <li>
+                                <div className="timeline-start">Mes 5-6</div>
+                                <div className="timeline-middle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div className="timeline-end timeline-box">
+                                    <div className="font-bold">Expansión</div>
+                                    Ampliar a sectores alimenticio y manufactura
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            {/* Call to Action Final */}
+            <div className="hero bg-gradient-to-r from-primary to-secondary text-primary-content rounded-lg">
+                <div className="hero-content text-center">
+                    <div className="max-w-md">
+                        <h2 className="text-3xl font-bold">¿Listo para comenzar?</h2>
+                        <p className="py-6">
+                            Contacta con nuestro equipo para desarrollar un plan de acción personalizado para tu empresa.
+                        </p>
+                        <button className="btn btn-accent">Solicitar Consultoría Gratuita</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
